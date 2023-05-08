@@ -25,5 +25,6 @@ public class Main {
   FormulasGUI myObj = new FormulasGUI();
   myObj.mainUi();
   myObj.forceBtn_();
-
+  myObj.mainUi1();
+  myObj.PEnergyBtn_();
 }}
