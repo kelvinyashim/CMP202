@@ -27,4 +27,6 @@ public class Main {
   myObj.forceBtn_();
   myObj.mainUi1();
   myObj.PEnergyBtn_();
+  myObj.mainUi2();
+  myObj.WorkDoneBtn_();
 }}

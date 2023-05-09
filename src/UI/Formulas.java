@@ -23,5 +23,7 @@ public class Formulas extends Physics {
         return mass * getGravity() * height;
     }
 
+    float WorkDone(float force, float distance){return force * distance;}
+
 
 }

@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.InputMismatchException;
 
-public class FormulasGUI {
+public class  FormulasGUI {
     JFrame frame = new JFrame("Physics");
     JButton forceBtn = new JButton("Calculate Force");
 
@@ -21,6 +21,20 @@ public class FormulasGUI {
 
 
     JTextField enterPEnergy1 = new JTextField("enter height");
+
+
+    JButton WorkDoneBtn = new JButton("Calculate WorkDone");
+
+    JFrame WorkDoneFrame = new JFrame("WorkDone");
+
+    JTextField enterWorkDone = new JTextField("Enter force");
+
+    Font font1 = new Font("Arial", Font.BOLD,16);
+
+
+    JTextField enterWorkDone1 = new JTextField("Enter height");
+
+
 
     public void mainUi(){
         frame.add(forceBtn);
@@ -37,6 +51,13 @@ public class FormulasGUI {
 
 
     }
+    public void mainUi2(){
+        frame.add(WorkDoneBtn);
+        frame.setSize(200,200);
+        frame.setLayout(new GridLayout(5,1));
+        frame.setVisible(true);
+    }
+
     Formulas formulas = new Formulas();
     public void forceBtn_(){
         forceBtn.addActionListener(new ActionListener() {
@@ -97,5 +118,37 @@ public class FormulasGUI {
 
 
         }
-}}
+
+}
+    Formulas formulas2 = new Formulas();
+    public void WorkDoneBtn_() {
+        WorkDoneBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              calcWorkDone();
+            }
+        });
+    }
+    public void calcWorkDone(){
+        forceFrame.add(enterWorkDone);
+        forceFrame.add(enterWorkDone1);
+        forceFrame.add(WorkDoneBtn);
+        forceFrame.setSize(200,200);
+        forceFrame.setLayout(new GridLayout(3,1));
+        forceFrame.setVisible(true);
+        enterPEnergy.setBackground(Color.GRAY);
+        enterPEnergy.setForeground(Color.WHITE);
+        enterPEnergy1.setBackground(Color.GRAY);
+        enterPEnergy1.setForeground(Color.WHITE);
+        enterPEnergy.setFont(font); // Set the font of the text field using setFont() method
+        enterPEnergy1.setFont(font);
+
+        try{
+            float PEnergy = formulas.PEnergy(Float.parseFloat(enterWorkDone.getText()),Float.parseFloat(enterWorkDone1.getText()));
+            JOptionPane.showMessageDialog(null,  PEnergy);
+        }catch (Exception e){
+            System.out.println("Calculate WorkDone");
+        }
+    }
+}
 
