@@ -80,7 +80,7 @@ public class  FormulasGUI {
             float force = formulas.Force(Float.parseFloat(enterForce.getText()),Float.parseFloat(enterForce1.getText()));
             JOptionPane.showMessageDialog(null, force);
         }catch (Exception e){
-            System.out.println("Calculate Force");
+            JOptionPane.showMessageDialog(null, "Calculate Force");
 
 
     }

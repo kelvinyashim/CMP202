@@ -1,0 +1,69 @@
+Index: src/UI/FormulasGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.InputMismatchException;\r\n\r\npublic class FormulasGUI {\r\n    JFrame frame = new JFrame(\"Physics\");\r\n    JButton forceBtn = new JButton(\"Calculate Force\");\r\n    JFrame forceFrame = new JFrame(\"Force\");\r\n    JTextField enterForce = new JTextField(\"Enter Mass\");\r\n    JTextField enterForce1 = new JTextField(\"Enter acceleration\");\r\n    public void mainUi(){\r\n        frame.add(forceBtn);\r\n        frame.setSize(200,200);\r\n        frame.setLayout(new GridLayout(5,1));\r\n        frame.setVisible(true);\r\n\r\n    }\r\n    Formulas formulas = new Formulas();\r\n    public void forceBtn_(){\r\n        forceBtn.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n            calcForce();\r\n\r\n            }\r\n        });\r\n    }\r\n    public void calcForce(){\r\n        forceFrame.add(enterForce);\r\n        forceFrame.add(enterForce1);\r\n        forceFrame.add(forceBtn);\r\n        forceFrame.setSize(200,200);\r\n        forceFrame.setLayout(new GridLayout(3,1));\r\n        forceFrame.setVisible(true);\r\n        try {\r\n            float force = formulas.Force(Float.parseFloat(enterForce.getText()),Float.parseFloat(enterForce1.getText()));\r\n            JOptionPane.showMessageDialog(null, force);\r\n        }catch (Exception e){\r\n            System.out.println(\"Calculate Force\");\r\n\r\n\r\n    }\r\n\r\n}}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/UI/FormulasGUI.java b/src/UI/FormulasGUI.java
+--- a/src/UI/FormulasGUI.java	
++++ b/src/UI/FormulasGUI.java	
+@@ -12,6 +12,8 @@
+     JFrame forceFrame = new JFrame("Force");
+     JTextField enterForce = new JTextField("Enter Mass");
+     JTextField enterForce1 = new JTextField("Enter acceleration");
++
++
+     public void mainUi(){
+         frame.add(forceBtn);
+         frame.setSize(200,200);
+@@ -41,9 +43,8 @@
+             JOptionPane.showMessageDialog(null, force);
+         }catch (Exception e){
+             System.out.println("Calculate Force");
+-
+-
++            JOptionPane.showMessageDialog(null, "Calculate Force");
++        }
+     }
+-
+-}}
++}
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"184c5d48-c757-495e-b866-1083907c90f6\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/GUI.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/UI/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2PUDA6HOGte6DA8QwbFJmYtLYmi\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"184c5d48-c757-495e-b866-1083907c90f6\" name=\"Changes\" comment=\"\" />\r\n      <created>1683502621755</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1683502621755</updated>\r\n      <workItem from=\"1683502622914\" duration=\"2197000\" />\r\n      <workItem from=\"1683551486400\" duration=\"4275000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,13 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="184c5d48-c757-495e-b866-1083907c90f6" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/GUI.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/UI/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/UI/FormulasGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/FormulasGUI.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -59,7 +54,9 @@
+       <option name="presentableId" value="Default" />
+       <updated>1683502621755</updated>
+       <workItem from="1683502622914" duration="2197000" />
+-      <workItem from="1683551486400" duration="4275000" />
++      <workItem from="1683551486400" duration="6450000" />
++      <workItem from="1683564092338" duration="445000" />
++      <workItem from="1683670435908" duration="673000" />
+     </task>
+     <servers />
+   </component>
