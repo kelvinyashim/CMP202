@@ -34,7 +34,13 @@ public class  FormulasGUI {
 
     JTextField enterWorkDone1 = new JTextField("Enter height");
 
+    JButton KEnergyBtn = new JButton("Calculate KEnergy");
+    JFrame KEnergyframe = new JFrame("KEnergy");
+    JTextField enterKEnergy = new JTextField("Enter mass");
 
+    Font font2 = new Font("Arial", Font.BOLD, 16);
+
+    JTextField enterKEnergy1 =  new JTextField("enter height");
 
     public void mainUi(){
         frame.add(forceBtn);
@@ -53,6 +59,14 @@ public class  FormulasGUI {
     }
     public void mainUi2(){
         frame.add(WorkDoneBtn);
+        frame.setSize(200,200);
+        frame.setLayout(new GridLayout(5,1));
+        frame.setVisible(true);
+    }
+
+
+    public void mainUi3(){
+        frame.add(KEnergyBtn);
         frame.setSize(200,200);
         frame.setLayout(new GridLayout(5,1));
         frame.setVisible(true);
@@ -129,12 +143,12 @@ public class  FormulasGUI {
             }
         });
     }
-    public void calcWorkDone(){
+    public void calcWorkDone() {
         forceFrame.add(enterWorkDone);
         forceFrame.add(enterWorkDone1);
         forceFrame.add(WorkDoneBtn);
-        forceFrame.setSize(200,200);
-        forceFrame.setLayout(new GridLayout(3,1));
+        forceFrame.setSize(200, 200);
+        forceFrame.setLayout(new GridLayout(3, 1));
         forceFrame.setVisible(true);
         enterPEnergy.setBackground(Color.GRAY);
         enterPEnergy.setForeground(Color.WHITE);
@@ -143,12 +157,43 @@ public class  FormulasGUI {
         enterPEnergy.setFont(font); // Set the font of the text field using setFont() method
         enterPEnergy1.setFont(font);
 
-        try{
-            float PEnergy = formulas.PEnergy(Float.parseFloat(enterWorkDone.getText()),Float.parseFloat(enterWorkDone1.getText()));
-            JOptionPane.showMessageDialog(null,  PEnergy);
-        }catch (Exception e){
+        try {
+            float PEnergy = formulas.PEnergy(Float.parseFloat(enterWorkDone.getText()), Float.parseFloat(enterWorkDone1.getText()));
+            JOptionPane.showMessageDialog(null, PEnergy);
+        } catch (Exception e) {
             System.out.println("Calculate WorkDone");
         }
-    }
-}
 
+
+    }
+    Formulas formulas3 = new Formulas();
+    public void KEnergyBtn_(){
+    KEnergyBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e){
+           calcKEnergy();
+        }
+    });
+
+
+    }
+    public void calcKEnergy(){
+        forceFrame.add(enterKEnergy);
+        forceFrame.add(enterKEnergy1);
+        forceFrame.add(KEnergyBtn);
+        forceFrame.setSize(200, 200);
+        forceFrame.setLayout(new GridLayout(3, 1));
+        forceFrame.setVisible(true);
+
+
+
+        try{
+             float KEnergy = formulas.KineticEnergy(Float.parseFloat(enterKEnergy.getText()), Float.parseFloat(enterKEnergy1.getText()));
+             JOptionPane.showMessageDialog(null, KEnergy);
+
+        } catch (Exception e){
+       System.out.println("Calculate KEnergy");
+
+    }
+
+} }

@@ -5,7 +5,10 @@ import UI.Formulas;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class
+
+
+Main {
     public static void main(String[] args) {
    /*     Formulas myObj = new Formulas();
         myObj.accessGravity();
@@ -29,4 +32,6 @@ public class Main {
   myObj.PEnergyBtn_();
   myObj.mainUi2();
   myObj.WorkDoneBtn_();
+  myObj.mainUi3();
+  myObj.KEnergyBtn_();
 }}
