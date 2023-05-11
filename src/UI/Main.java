@@ -29,4 +29,6 @@ public class Main {
   myObj.PEnergyBtn_();
   myObj.mainUi2();
   myObj.WorkDoneBtn_();
+  myObj.mainUi3();
+  myObj.KineticEnergyBtn_();
 }}
