@@ -34,6 +34,10 @@ public class  FormulasGUI {
 
     JTextField enterWorkDone1 = new JTextField("Enter height");
 
+
+    JButton PressureBtn = new JButton("Calculate Pressure");
+    JFrame Pressureframe = new JFrame("Pressure");
+    JTextField enterPressure = new JTextField("Enter force");
     JButton KineticEnergyBtn = new JButton("Calculate KineticEnergy");
 
 
@@ -50,9 +54,9 @@ public class  FormulasGUI {
     JTextField enterKineticEnergy1 = new JTextField("Enter v");
 
 
+    Font font2 = new Font("Arial", Font.BOLD, 16);
 
-
-
+    JTextField enterPressure1 =  new JTextField("enter area");
 
     public void mainUi(){
         frame.add(forceBtn);
@@ -82,6 +86,14 @@ public class  FormulasGUI {
         frame.setVisible(true);
     }
 
+
+
+    public void mainUi4(){
+        frame.add(PressureBtn);
+        frame.setSize(200,200);
+        frame.setLayout(new GridLayout(5,1));
+        frame.setVisible(true);
+    }
 
     Formulas formulas = new Formulas();
     public void forceBtn_(){
@@ -174,7 +186,39 @@ public class  FormulasGUI {
         } catch (Exception e) {
             System.out.println("Calculate WorkDone");
         }
+
+
     }
+    Formulas formulas4 = new Formulas();
+    public void PressureBtn_(){
+    PressureBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e){
+           calcPressure();
+        }
+    });
+
+
+    }
+    public void calcPressure(){
+        forceFrame.add(enterPressure);
+        forceFrame.add(enterPressure1);
+        forceFrame.add(PressureBtn);
+        forceFrame.setSize(200, 200);
+        forceFrame.setLayout(new GridLayout(3, 1));
+        forceFrame.setVisible(true);
+
+
+
+        try{
+             float Pressure = formulas.Pressure(Float.parseFloat(enterPressure.getText()), Float.parseFloat(enterPressure1.getText()));
+             JOptionPane.showMessageDialog(null, Pressure);
+
+        } catch (Exception e){
+       System.out.println("Calculate Pressure");
+
+    }
+
         Formulas formulas3 = new Formulas();
 
         public void KineticEnergyBtn_ ()
@@ -217,3 +261,4 @@ public class  FormulasGUI {
     }
 
 
+} }

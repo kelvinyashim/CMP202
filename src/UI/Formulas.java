@@ -25,5 +25,8 @@ public class Formulas extends Physics {
 
     float WorkDone(float force, float distance){return force * distance;}
 
+    float Pressure(float force, float area){ return divide(force,area);}
+
+
 
 }
