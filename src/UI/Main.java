@@ -32,6 +32,8 @@ Main {
   myObj.PEnergyBtn_();
   myObj.mainUi2();
   myObj.WorkDoneBtn_();
-  myObj.mainUi3();
-  myObj.KEnergyBtn_();
+  myObj.mainUi4();
+  myObj.PressureBtn_();
+
+
 }}

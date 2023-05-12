@@ -34,13 +34,13 @@ public class  FormulasGUI {
 
     JTextField enterWorkDone1 = new JTextField("Enter height");
 
-    JButton KEnergyBtn = new JButton("Calculate KEnergy");
-    JFrame KEnergyframe = new JFrame("KEnergy");
-    JTextField enterKEnergy = new JTextField("Enter mass");
+    JButton PressureBtn = new JButton("Calculate Pressure");
+    JFrame Pressureframe = new JFrame("Pressure");
+    JTextField enterPressure = new JTextField("Enter force");
 
     Font font2 = new Font("Arial", Font.BOLD, 16);
 
-    JTextField enterKEnergy1 =  new JTextField("enter height");
+    JTextField enterPressure1 =  new JTextField("enter area");
 
     public void mainUi(){
         frame.add(forceBtn);
@@ -65,8 +65,8 @@ public class  FormulasGUI {
     }
 
 
-    public void mainUi3(){
-        frame.add(KEnergyBtn);
+    public void mainUi4(){
+        frame.add(PressureBtn);
         frame.setSize(200,200);
         frame.setLayout(new GridLayout(5,1));
         frame.setVisible(true);
@@ -166,21 +166,21 @@ public class  FormulasGUI {
 
 
     }
-    Formulas formulas3 = new Formulas();
-    public void KEnergyBtn_(){
-    KEnergyBtn.addActionListener(new ActionListener() {
+    Formulas formulas4 = new Formulas();
+    public void PressureBtn_(){
+    PressureBtn.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e){
-           calcKEnergy();
+           calcPressure();
         }
     });
 
 
     }
-    public void calcKEnergy(){
-        forceFrame.add(enterKEnergy);
-        forceFrame.add(enterKEnergy1);
-        forceFrame.add(KEnergyBtn);
+    public void calcPressure(){
+        forceFrame.add(enterPressure);
+        forceFrame.add(enterPressure1);
+        forceFrame.add(PressureBtn);
         forceFrame.setSize(200, 200);
         forceFrame.setLayout(new GridLayout(3, 1));
         forceFrame.setVisible(true);
@@ -188,11 +188,11 @@ public class  FormulasGUI {
 
 
         try{
-             float KEnergy = formulas.KineticEnergy(Float.parseFloat(enterKEnergy.getText()), Float.parseFloat(enterKEnergy1.getText()));
-             JOptionPane.showMessageDialog(null, KEnergy);
+             float Pressure = formulas.Pressure(Float.parseFloat(enterPressure.getText()), Float.parseFloat(enterPressure1.getText()));
+             JOptionPane.showMessageDialog(null, Pressure);
 
         } catch (Exception e){
-       System.out.println("Calculate KEnergy");
+       System.out.println("Calculate Pressure");
 
     }
 
