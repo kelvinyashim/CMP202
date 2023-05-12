@@ -36,4 +36,8 @@ Main {
   myObj.PressureBtn_();
 
 
+
+  myObj.mainUi3();
+  myObj.KineticEnergyBtn_();
+
 }}
