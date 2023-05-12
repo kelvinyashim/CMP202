@@ -7,10 +7,10 @@ public class Formulas extends Physics {
         //System.out.println(getGravity());
 
     }
-    float mutiply(float num1, float num2) {
+    /*float mutiply(float num1, float num2) {
 
         return super.mutiply(num1, num2);
-    }
+    }*/
     float Force(float m, float a){
         return mutiply(m,a);
     }
