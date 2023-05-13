@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.InputMismatchException;
+
 
 public class  FormulasGUI {
     JFrame frame = new JFrame("Physics");
@@ -54,47 +54,21 @@ public class  FormulasGUI {
     JTextField enterKineticEnergy1 = new JTextField("Enter v");
 
 
-    Font font2 = new Font("Arial", Font.BOLD, 16);
+
 
     JTextField enterPressure1 =  new JTextField("enter area");
 
     public void mainUi(){
         frame.add(forceBtn);
-        frame.setSize(200,200);
-        frame.setLayout(new GridLayout(5,1));
-        frame.setVisible(true);
-
-    }
-    public void mainUi1(){
         frame.add(PEnergyBtn);
-        frame.setSize(200,200);
-        frame.setLayout(new GridLayout(5,1));
-        frame.setVisible(true);
-
-
-    }
-    public void mainUi2(){
         frame.add(WorkDoneBtn);
-        frame.setSize(200,200);
-        frame.setLayout(new GridLayout(5,1));
-        frame.setVisible(true);
-    }
-    public void mainUi3(){
         frame.add(KineticEnergyBtn);
-        frame.setSize(200,200);
-        frame.setLayout(new GridLayout(5,1));
-        frame.setVisible(true);
-    }
-
-
-
-    public void mainUi4(){
         frame.add(PressureBtn);
         frame.setSize(200,200);
         frame.setLayout(new GridLayout(5,1));
         frame.setVisible(true);
-    }
 
+    }
     Formulas formulas = new Formulas();
     public void forceBtn_(){
         forceBtn.addActionListener(new ActionListener() {
@@ -123,7 +97,6 @@ public class  FormulasGUI {
     }
 
 }
-    Formulas formulas1= new Formulas();
     public void PEnergyBtn_(){
         PEnergyBtn.addActionListener(new ActionListener() {
             @Override
@@ -134,12 +107,12 @@ public class  FormulasGUI {
         });
     }
     public void calcPEnergy(){
-        forceFrame.add(enterPEnergy);
-        forceFrame.add(enterPEnergy1);
-        forceFrame.add(PEnergyBtn);
-        forceFrame.setSize(200,200);
-        forceFrame.setLayout(new GridLayout(3,1));
-        forceFrame.setVisible(true);
+        PEnergyFrame.add(enterPEnergy);
+        PEnergyFrame.add(enterPEnergy1);
+        PEnergyFrame.add(PEnergyBtn);
+        PEnergyFrame.setSize(200,200);
+        PEnergyFrame.setLayout(new GridLayout(3,1));
+        PEnergyFrame.setVisible(true);
         enterPEnergy.setBackground(Color.GRAY);
         enterPEnergy.setForeground(Color.WHITE);
         enterPEnergy1.setBackground(Color.GRAY);
@@ -157,7 +130,7 @@ public class  FormulasGUI {
         }
 
 }
-    Formulas formulas2 = new Formulas();
+
     public void WorkDoneBtn_() {
         WorkDoneBtn.addActionListener(new ActionListener() {
             @Override
@@ -189,7 +162,7 @@ public class  FormulasGUI {
 
 
     }
-    Formulas formulas4 = new Formulas();
+
     public void PressureBtn_(){
     PressureBtn.addActionListener(new ActionListener() {
         @Override
@@ -200,7 +173,7 @@ public class  FormulasGUI {
 
 
     }
-    public void calcPressure(){
+    public void calcPressure() {
         forceFrame.add(enterPressure);
         forceFrame.add(enterPressure1);
         forceFrame.add(PressureBtn);
@@ -209,21 +182,17 @@ public class  FormulasGUI {
         forceFrame.setVisible(true);
 
 
+        try {
+            float Pressure = formulas.Pressure(Float.parseFloat(enterPressure.getText()), Float.parseFloat(enterPressure1.getText()));
+            JOptionPane.showMessageDialog(null, Pressure);
 
-        try{
-             float Pressure = formulas.Pressure(Float.parseFloat(enterPressure.getText()), Float.parseFloat(enterPressure1.getText()));
-             JOptionPane.showMessageDialog(null, Pressure);
+        } catch (Exception e) {
+            System.out.println("Calculate Pressure");
 
-        } catch (Exception e){
-       System.out.println("Calculate Pressure");
-
+        }
     }
 
-        Formulas formulas3 = new Formulas();
-
-        public void KineticEnergyBtn_ ()
-        {
-
+        public void KineticEnergyBtn_(){
             KineticEnergyBtn.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -231,7 +200,6 @@ public class  FormulasGUI {
                 }
             });
         }
-
         public void calKineticEnergy(){
             forceFrame.add(enterKineticEnergy);
             forceFrame.add(enterKineticEnergy1);
@@ -258,7 +226,8 @@ public class  FormulasGUI {
 
 
         }
-    }
 
 
-} }
+
+}
+

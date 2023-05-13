@@ -28,16 +28,9 @@ Main {
   FormulasGUI myObj = new FormulasGUI();
   myObj.mainUi();
   myObj.forceBtn_();
-  myObj.mainUi1();
   myObj.PEnergyBtn_();
-  myObj.mainUi2();
   myObj.WorkDoneBtn_();
-  myObj.mainUi4();
   myObj.PressureBtn_();
-
-
-
-  myObj.mainUi3();
   myObj.KineticEnergyBtn_();
 
 }}
